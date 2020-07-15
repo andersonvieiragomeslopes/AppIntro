@@ -13,7 +13,7 @@ using Com.Github.Appintro;
 using Com.Github.Appintro.Model;
 namespace AppIntro.Droid
 {
-    [Activity(Label = "IntroActivity")]
+    [Activity(Theme = "@style/MainTheme")]
     public class IntroActivity : AppIntro2
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -60,19 +60,36 @@ namespace AppIntro.Droid
                 imageDrawable: Resource.Mipmap.icon,
                 backgroundDrawable: Resource.Drawable.back_slide5
             ));
-
+            //do you can implement this 
+            //SystemBackButtonLocked = true;
+            //SkipButtonEnabled = true;
+            //SetSkipText("PULAR");
+            //SetDoneText("FINALIZAR");
+            //SetImmersiveMode();
             SetTransformer(new AppIntroPageTransformerType.Parallax());
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
         }
 
         protected override void OnSkipPressed(AndroidX.Fragment.App.Fragment currentFragment)
         {
+            AppSettings.AppTutorialInit = true;
+
             base.OnSkipPressed(currentFragment);
+
+            //force try
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
             Finish();
         }
 
         protected override void OnDonePressed(AndroidX.Fragment.App.Fragment currentFragment)
         {
+            AppSettings.AppTutorialInit = true;
+
             base.OnDonePressed(currentFragment);
+            var intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
             Finish();
         }
     }
