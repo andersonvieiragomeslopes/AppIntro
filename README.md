@@ -18,3 +18,7 @@ Lag in my device , sorry :/
 - [Repository] (https://github.com/brightness007/Xamarin.AppIntro.Droid)
 - [NugetPackage] (https://www.nuget.org/packages/Xamarin.AppIntro.Droid)
 
+## Tool Alternative for Xamarin Forms (android/ios)
+
+- [Repository] (https://github.com/galadril/Xam.Plugin.SimpleAppIntro)
+- [NugetPackage] (https://www.nuget.org/packages/Xam.Plugin.SimpleAppIntro)
